@@ -14,7 +14,7 @@ services:
       phpunit/phpunit: '*'
 
   database:
-    portforward: 3307
+    portforward: 3306
     creds:
       user: admin
       password: sviluppo
