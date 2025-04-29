@@ -1,6 +1,5 @@
 FROM php:8.1-apache
 
-# Installa dipendenze
 RUN apt-get update && apt-get install -y \
     libpng-dev libjpeg-dev libfreetype6-dev zip unzip \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
@@ -12,11 +11,12 @@ RUN a2enmod rewrite
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 WORKDIR /var/www/html/backend
-COPY ./backend .
+
+# QUI LA FIX
+COPY ./backend/ .
+
 RUN composer install --no-dev --optimize-autoloader || true
 
-
-# Cambia DocumentRoot ad Apache
 RUN sed -i 's#/var/www/html#/var/www/html/backend#g' /etc/apache2/sites-available/000-default.conf
 
 EXPOSE 80
