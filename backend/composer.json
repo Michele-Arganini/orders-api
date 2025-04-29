@@ -1,0 +1,12 @@
+{
+    "name": "www-data/backend",
+    "autoload": {
+      "psr-4": {
+        "Src\\": "src/"
+      }
+    },
+    "require": {
+      "thingengineer/mysqli-database-class": "^2.9"
+    }
+  }
+  
