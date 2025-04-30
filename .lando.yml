@@ -1,4 +1,4 @@
-name: progetto-test
+name: orders-api
 recipe: lamp
 config:
   php: '8.1'
@@ -9,9 +9,13 @@ config:
 services:
   appserver:
     build_as_root:
-      - apt-get update && apt-get install -y git
+      - apt-get update && apt-get install -y git curl
+      - curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
+      - apt-get install -y nodejs
     composer:
       phpunit/phpunit: '*'
+    build:
+      - npm install
 
   database:
     portforward: 3306
@@ -41,9 +45,29 @@ tooling:
   phpmyadmin:
     service: pma
     cmd: lando-pma
+    
+  npm:
+    service: appserver
+    cmd: npm
+    
+  'npm:i':
+    service: appserver
+    cmd: npm i
+    
+  'npm:build':
+    service: appserver
+    cmd: npm run build
+    
+  'npm:dev':
+    service: appserver
+    cmd: npm run dev
+    
+  node:
+    service: appserver
+    cmd: node
 
 proxy:
   appserver:
-    - progetto-test.lndo.site
+    - orders-api.lndo.site
   pma:
-    - pma-progetto-test.lndo.site
+    - pma-orders-api.lndo.site
