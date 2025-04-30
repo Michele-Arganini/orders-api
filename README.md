@@ -46,8 +46,8 @@ Lando fornisce automaticamente:
 ### 1. Clona il repository
 
 ```bash
-git clone https://github.com/Michele-Arganini/progetto-test.git
-cd progetto-test
+git clone https://github.com/Michele-Arganini/orders-api.git
+
 ```
 
 ### 2. Configura le variabili d’ambiente
