@@ -4,8 +4,10 @@ Un'app Vue 3 + Vite con backend PHP che consente la ricerca di ordini tramite em
 
 ## Demo Live
 
-- **Frontend:** [https://orders-eck1n27mi-micheles-projects-727ff2b5.vercel.app/](https://orders-eck1n27mi-micheles-projects-727ff2b5.vercel.app/)
 - **Backend API:** [https://orders-api-wnz2.onrender.com/](https://orders-api-wnz2.onrender.com/)
+- **Frontend:** [https://orders-eck1n27mi-micheles-projects-727ff2b5.vercel.app/](https://orders-eck1n27mi-micheles-projects-727ff2b5.vercel.app/)
+
+> **Nota:** assicurati di avviare prima il backend per permettere al frontend di caricare correttamente i dati e visualizzare il funzionamento completo dell’applicativo.
 
 ## Utenti di Test
 
